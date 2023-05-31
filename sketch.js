@@ -1,4 +1,4 @@
-let width = 800;
+let width = 400;
 let height = 400;
 let bird;
 let doublePipes = [];
@@ -42,5 +42,5 @@ function createDoublePipe() {
 }
 
 function mousePressed() {
-  bird.applyForce(createVector(0, -2));
+  bird.applyForce(createVector(0, -4));
 }
