@@ -42,5 +42,5 @@ function createDoublePipe() {
 }
 
 function mousePressed() {
-  bird.applyForce(createVector(0, -4));
+  bird.applyForce(createVector(0, -2));
 }
