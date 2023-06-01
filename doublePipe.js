@@ -1,13 +1,13 @@
 class DoublePipe {
-  constructor(x, y, totalHeight) {
+  constructor(x, y, totalHeight, img) {
     this.pos = createVector(x, y);
     this.gap = 100;
     this.width = 50;
 
-    this.upperHeight = random(50, totalHeight - this.gap - 10);
+    this.upperHeight = random(10, totalHeight - this.gap - 10);
     this.lowerHeight = totalHeight - this.upperHeight - this.gap;
-    this.upper = new Pipe(this.pos.x, this.pos.y, this.width, this.upperHeight);
-    this.lower = new Pipe(this.pos.x, this.pos.y + this.upperHeight + this.gap, this.width, this.lowerHeight);
+    this.upper = new Pipe(this.pos.x, this.pos.y, this.width, this.upperHeight, img, true);
+    this.lower = new Pipe(this.pos.x, this.pos.y + this.upperHeight + this.gap, this.width, this.lowerHeight, img, false);
 
     this.totalWidth = x;
     this.distance = 300;

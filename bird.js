@@ -1,17 +1,19 @@
 class Bird {
-  constructor(x, y) {
+  constructor(x, y, img) {
     this.pos = createVector(x, y);
     this.vel = createVector();
     this.acc = createVector();
 
-    this.r = 16;
+    this.r = 24;
+    this.img = img;
 
     this.dead = false;
   }
 
   show() {
     fill(255);
-    ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
+    //ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
+    image(this.img, this.pos.x - this.r - 15, this.pos.y - this.r - 10)
   }
 
   update() {

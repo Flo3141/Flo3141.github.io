@@ -1,5 +1,5 @@
 class Pipe {
-  constructor(x, y, w, h) {
+  constructor(x, y, w, h, img, upper) {
     this.pos = createVector(x, y);
     this.width = w;
     this.height = h;
@@ -7,12 +7,18 @@ class Pipe {
     this.distance = 300;
     this.createdNextPipe = false;
 
-
+    this.img = img;
+    this.upper = upper;
   }
 
   show(x) {
     fill(0, 255, 0);
-    rect(this.pos.x, this.pos.y, this.width, this.height)
+    //rect(this.pos.x, this.pos.y, this.width, this.height);
+    if (this.upper) {
+      image(this.img, this.pos.x, this.pos.y - (this.img.height - this.height));
+    } else {
+      image(this.img, this.pos.x, this.pos.y);
+    }
   }
 
   collide(bird) {
