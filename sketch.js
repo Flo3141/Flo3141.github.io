@@ -94,7 +94,7 @@ function newGame() {
 
   let lastBg = backgrounds.slice(-1)[0];
   backgrounds.push(new Background(lastBg.pos.x + lastBg.img.width, 0, backgroundImg, height));
-  vel = createVector(-1, 0);
+  vel = createVector(-2, 0);
 }
 
 function createDoublePipe() {
