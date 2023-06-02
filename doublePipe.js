@@ -29,6 +29,10 @@ class DoublePipe {
     if (bird.pos.x > this.pos.x + this.width && !this.updateScore) {
       this.updateScore = true;
       score++;
+      if (score > highscore) {
+        highscore = score;
+        localStorage.setItem("highscore", highscore);
+      }
     }
   }
 

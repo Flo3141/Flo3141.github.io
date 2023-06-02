@@ -1,8 +1,10 @@
 class Bird {
-  constructor(x, y, img) {
+  constructor(x, y, img, offset) {
     this.pos = createVector(x, y);
     this.vel = createVector();
     this.acc = createVector();
+
+    this.imgOffset = offset;
 
     this.r = 24;
     this.img = img;
@@ -11,9 +13,9 @@ class Bird {
   }
 
   show() {
-    fill(255);
+    //fill(0, 255, 0);
     //ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
-    image(this.img, this.pos.x - this.r - 15, this.pos.y - this.r - 10)
+    image(this.img, this.pos.x - this.r + this.imgOffset.x, this.pos.y - this.r + this.imgOffset.y);
   }
 
   update() {
